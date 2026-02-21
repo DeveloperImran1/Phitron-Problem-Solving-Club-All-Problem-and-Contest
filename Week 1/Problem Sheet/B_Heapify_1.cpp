@@ -1,54 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int N = 2e5;
+vector<int> group(N, -1);
+
+void percompute()
+{
+    int grp = 1;
+    for (int i = 1; i <= N; i++)
+    {
+        if (group[i] == -1)
+        {
+            for (int j = i; j <= N; j = 2 * j)
+            {
+                group[j] = grp;
+            }
+            grp++;
+        }
+    }
+};
+
 int main()
 {
+    percompute();
+
     int t;
     cin >> t;
     while (t--)
     {
         int n;
         cin >> n;
-        vector<int> v(n);
+        vector<int> v(n + 1);
         for (int i = 1; i <= n; i++)
         {
-            int val;
-            cin >> val;
-            v[i] = val;
+            cin >> v[i];
         }
 
-        int is_updated = 1;
-        int is_sorted = 1;
-        while (is_updated)
+        bool res = true;
+        for (int i = 1; i <= n; i++)
         {
-            is_updated = 0;
-            is_sorted = 1;
-
-            for (int i = 1; i <= n / 2; i++)
+            if (group[i] != group[v[i]])
             {
-                if (v[i] > v[2 * i])
-                {
-                    swap(v[i], v[2 * i]);
-                    is_updated = 1;
-                }
-            }
-
-            for (int i = 1; i < n; i++)
-            {
-                if (v[i] > v[i + 1])
-                {
-                    is_sorted = 0;
-                    break;
-                }
-            }
-
-            if (is_sorted)
-            {
-                break;
+                res = false;
             }
         }
 
-        is_sorted ? cout << "YES" << endl : cout << "NO" << endl;
+        res ? cout << "YES" << endl : cout << "NO" << endl;
     }
 
     return 0;
