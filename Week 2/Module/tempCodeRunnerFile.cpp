@@ -1,0 +1,2 @@
+;
+    cout << mp.empty() << '\n';
