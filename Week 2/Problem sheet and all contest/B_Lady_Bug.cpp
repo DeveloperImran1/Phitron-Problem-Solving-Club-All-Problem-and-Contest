@@ -1,3 +1,5 @@
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,53 +17,53 @@ int main()
         string a, b;
         cin >> a >> b;
 
-        int total_one = 0;
-        for (int i = 0; i < n; i++)
+        int total_zero_in_a = 0;
+        int total_zero_in_b = 0;
+
+        // for a
+        for (int i = 0; i < n; i += 2)
         {
-            if (a[i] == '1')
+            if (a[i] == '0')
             {
-                total_one++;
+                total_zero_in_a++;
+            }
+        }
+        for (int i = 1; i < n; i += 2)
+        {
+            if (b[i] == '0')
+            {
+                total_zero_in_a++;
             }
         }
 
-        while (1)
+        // for b
+        for (int i = 0; i < n; i += 2)
         {
-            int is_changed = 0;
-
-            for (int i = 0; i < n; i++)
+            if (b[i] == '0')
             {
-                if (a[i] == '1' && i >= 1 && b[i - 1] == '0')
-                {
-                    swap(a[i], b[i - 1]);
-                    total_one--;
-                    is_changed = 1;
-                }
-                else if (a[i] == '1' && i < n - 1 && b[i + 1] == '0')
-                {
-                    swap(a[i], b[i + 1]);
-                    total_one--;
-                    is_changed = 1;
-                }
-
-                if (total_one == 0)
-                {
-                    break;
-                }
+                total_zero_in_b++;
             }
-
-            for (int i = 0; i < n; i++)
+        }
+        for (int i = 1; i < n; i += 2)
+        {
+            if (a[i] == '0')
             {
-                cout << a[i];
-            }
-            cout << '\n';
-
-            if (!is_changed)
-            {
-                break;
+                total_zero_in_b++;
             }
         }
 
-        // cout << total_one << endl;
+                if (total_zero_in_a < ((n + 1) / 2))
+        {
+            cout << "NO" << endl;
+        }
+        else if (total_zero_in_b < (n / 2))
+        {
+            cout << "NO" << endl;
+        }
+        else
+        {
+            cout << "YES" << endl;
+        }
     }
 
     return 0;

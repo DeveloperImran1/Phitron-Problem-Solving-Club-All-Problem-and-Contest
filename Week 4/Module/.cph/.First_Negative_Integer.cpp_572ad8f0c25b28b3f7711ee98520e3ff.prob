@@ -1,0 +1,1 @@
+{"name":"Local: First_Negative_Integer","url":"d:\\Phitron\\XPSC\\Week 4\\Module\\First_Negative_Integer.cpp","tests":[{"id":1774514084275,"input":"5 2\n-8 2 3 -6 10","output":"-8 0 -6 -6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\XPSC\\Week 4\\Module\\First_Negative_Integer.cpp","group":"local","local":true}
