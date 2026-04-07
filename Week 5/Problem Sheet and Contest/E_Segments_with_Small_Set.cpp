@@ -6,10 +6,8 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n;
-    long long int k;
+    int n, k;
     cin >> n >> k;
-
     vector<int> v(n);
     for (int i = 0; i < n; i++)
     {
@@ -17,30 +15,37 @@ int main()
     }
 
     int l = 0, r = 0;
-    long long int count = 0, ans = 0;
+    long long int ans = 0;
+    map<int, int> mp;
     while (r < n)
     {
-        count += v[r];
-        if (count <= k)
+        mp[v[r]]++;
+        if (mp.size() <= k)
         {
-            ans += r - l + 1;
+            ans += (r - l + 1);
         }
         else
         {
-            while (count > k)
+            while (mp.size() > k)
             {
-                count -= v[l];
-                l++;
-                if (count <= k)
+                mp[v[l]]--;
+                if (mp[v[l]] == 0)
                 {
-                    ans += r - l + 1;
+                    mp.erase(v[l]);
                 }
+                l++;
+            }
+
+            if (mp.size() <= k)
+            {
+                ans += (r - l + 1);
             }
         }
+
         r++;
     }
 
-    cout << ans << endl;
+    cout << ans;
 
     return 0;
 }
