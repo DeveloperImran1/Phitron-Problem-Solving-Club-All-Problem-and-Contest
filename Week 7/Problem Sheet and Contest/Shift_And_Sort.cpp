@@ -19,48 +19,26 @@ int main()
             cin >> v[i];
         }
 
-        for (int i = 0; i < n;)
+        for (int i = 0; i < n - 1; i++)
         {
-            int a = v[i];
-            int b = v[i + 1];
-            if (a > b)
-            {
-                int extra = a - b;
-                int minus = ceil(extra / 2);
-                v[i] = v[i] - minus;
-                v[i + 1] = v[i + 1] + minus;
 
-                i = i + 2;
-            }
-            else
+            if (v[i] > v[i + 1])
             {
+                int total = v[i] + v[i + 1];
+                int half = total / 2;
+                v[i] = half;
+                v[i + 1] = total - half;
                 i++;
-            }
-
-            if (i == (n - 2) || i == (n - 1))
-            {
-                i++;
-                int a1 = v[i];
-                int b1 = v[i + 1];
-                if (a1 > b1)
-                {
-                    int extra = a1 - b1;
-                    int minus = ceil(extra / 2);
-                    v[i] = v[i] - minus;
-                    v[i + 1] = v[i + 1] + minus;
-                }
-                break;
             }
         }
         int is_posible = 1;
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n - 1; i++)
         {
-            cout << v[i] << " ";
-            // if (v[i] > v[i + 1])
-            // {
-            //     is_posible = 0;
-            //     break;
-            // }
+            if (v[i] > v[i + 1])
+            {
+                is_posible = 0;
+                break;
+            }
         }
         if (is_posible)
         {
