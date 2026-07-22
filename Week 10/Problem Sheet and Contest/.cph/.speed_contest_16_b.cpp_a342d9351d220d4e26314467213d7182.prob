@@ -1,0 +1,1 @@
+{"name":"Local: speed_contest_16_b","url":"d:\\Phitron\\XPSC\\Week 10\\Problem Sheet and Contest\\speed_contest_16_b.cpp","tests":[{"id":1784648581203,"input":"3\n1 2\n1 1\n4 2\n","output":"3\n1\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\XPSC\\Week 10\\Problem Sheet and Contest\\speed_contest_16_b.cpp","group":"local","local":true}
