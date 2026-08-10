@@ -1,4 +1,19 @@
-# Problem Solving Status
+# 💻 Phitron Problem Solving & DSA Journey
+
+Welcome to my problem-solving repository! This repository contains all the Data Structures, Algorithms, and contest problems I have solved in **C** and **C++** over the past 1 year. 
+
+### 🚀 What's Inside?
+- **Data Structures:** Arrays, Linked Lists, Stacks, Queues, Trees, Graphs.
+- **Algorithms:** Sorting, Searching, Dynamic Programming (DP), Greedy Algorithms.
+- **Contests:** Solutions to various programming contests from Phitron Problem Solving Club.
+
+### 🛠️ Tech Stack
+- C
+- C++
+
+
+
+### Problem Solving Status
 
 | OJ            | Username                                                                                | Solve Count |
 | ------------- | --------------------------------------------------------------------------------------- | ----------- |
